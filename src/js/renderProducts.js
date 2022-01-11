@@ -1,9 +1,10 @@
 import { getProducts } from '../constants';
+import notFoundImg from '../assets/imagen-no-encontrada.png';
 
 const productTemplate = ({ name, id, category, discount, price, url_image }) => `
 <card item-id="${id}" category-id="${category}" class="bg-white m-4 p-2 flex flex-col shadow-lg w-full h-full">
         <div class = "grid h-full place-content-center">
-        <img class=" object-cover" src="${url_image}" onerror="this.onerror=null; this.src='./src/assets/imagen-no-encontrada.png'" loading="lazy" alt="">
+        <img class=" object-cover" src="${url_image}" onerror="this.onerror=null; this.src='${notFoundImg}'" loading="lazy" alt="">
         </div>         
         <h1 class="text-center text-xl font-medium text-gray-500 pb-14">${name}</h1>
         <hr>
