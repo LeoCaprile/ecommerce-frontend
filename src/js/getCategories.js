@@ -8,21 +8,22 @@ function capitalizeFirstLetter(string) {
 const categoryTemplate = (category, id) =>
 	`<a id="${id}" class="bg-white cursor-pointer px-4 py-2 block hover:bg-slate-300">${category}</a>`;
 
-const renderCategories = () => {
+const renderCategories = async () => {
 	const dropdownCategories = document.getElementById('dropdown-categories');
 
-	fetch(getCategories).then((data) => data.json()).then((data) => {
-		data.forEach((el) => {
-			const { name, id } = el;
+	const response = await fetch(getCategories);
+	const fetchedCategories = await response.json();
 
-			const category = document.createElement('div');
-			category.innerHTML = categoryTemplate(capitalizeFirstLetter(name), id);
-			category.firstChild.addEventListener('click', () => {
-				renderProducts('', id);
-			});
+	fetchedCategories.forEach((el) => {
+		const { name, id } = el;
 
-			dropdownCategories.appendChild(category);
+		const category = document.createElement('div');
+		category.innerHTML = categoryTemplate(capitalizeFirstLetter(name), id);
+		category.firstChild.addEventListener('click', () => {
+			renderProducts('', id);
 		});
+
+		dropdownCategories.appendChild(category);
 	});
 };
 
