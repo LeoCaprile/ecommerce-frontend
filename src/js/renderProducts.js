@@ -20,15 +20,28 @@ const productTemplate = ({ name, id, category, discount, price, url_image }) => 
 </card>
 `;
 
-export const renderProducts = () => {
-	const productContainer = document.getElementById('product-container');
+const loader =
+	'<div class="absolute left-1/2 top-1/4 place-self-center rounded-full border-8 border-l-transparent border-blue-500 w-20 h-20 transition-all animate-spin duration-200 ease-linear"></div>';
 
-	fetch(getProducts()).then((data) => data.json()).then((data) => {
-		data.forEach((productData) => {
-			const product = document.createElement('div');
-			product.innerHTML = productTemplate(productData);
-			productContainer.append(product.firstElementChild);
-		});
+const productNotFoundMsg = `<div class="text-center w-50 h-20 col-span-4 row-end-3 "><i class="mb-5 fas fa-search fa-7x"></i><i class="relative right-20 bottom-8 fas fa-question fa-3x"></i>
+<h1 class="text-3xl">No hemos podido encontrar el producto que buscabas</h1>
+</div>`;
+
+export const renderProducts = (name, category, price) => {
+	const productContainer = document.getElementById('product-container');
+	productContainer.innerHTML = loader;
+	fetch(getProducts(name, category, price)).then((data) => data.json()).then((data) => {
+		productContainer.innerHTML = '';
+		const isDataEmpty = data.length;
+		if (isDataEmpty) {
+			data.forEach((productData) => {
+				const product = document.createElement('div');
+				product.innerHTML = productTemplate(productData);
+				productContainer.append(product.firstElementChild);
+			});
+		} else {
+			productContainer.innerHTML = productNotFoundMsg;
+		}
 	});
 };
 
