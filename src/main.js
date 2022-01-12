@@ -1,3 +1,4 @@
 import './js/getCategories';
+import './js/getDiscounts';
 import './js/searchBar';
-import { renderProducts } from './js/renderProducts';
+import './js/renderProducts';
