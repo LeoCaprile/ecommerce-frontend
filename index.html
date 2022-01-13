@@ -18,7 +18,7 @@
       <a class="all-products hidden md:block ml-10 cursor-pointer hover:border-b-2 border-b-orange-500">Todos los productos</a>
 
       <div class="group p-2">
-        <a class="ml-0 md:ml-10 cursor-pointer hover:border-b-2 border-b-orange-500">Categorias</a>
+        <a class="ml-3 md:ml-10 cursor-pointer hover:border-b-2 border-b-orange-500">Categorias</a>
         <div id="dropdown-categories" class="hidden group-hover:block absolute  bg-white left-1/5 top-14 rounded-lg shadow-lg text-left px-2 py-2">
         <a class="all-products md:hidden bg-white cursor-pointer px-4 py-2 block hover:bg-slate-300">Todos los productos</a>
         <a class="discounts md:hidden bg-white cursor-pointer px-4 py-2 block hover:bg-slate-300">Ofertas</a>
@@ -29,8 +29,9 @@
     </div>
 
     <div class="flex items-center justify-between">
+ 
+      <input id="search-bar" class="md:bg-transparent outline-1 bg-white absolute right-20 rounded-full focus:top-12 focus:w-40 shadow-lg p-2 pl-3 pr-8 content-none md:outline-none w-8 md:focus:w-60 md:static transition-all duration-200 " type="text"  onblur="this.value=''" maxlength="30"/>
 
-       <input id="search-bar" class="md:bg-transparent outline-1 bg-white absolute right-20 rounded-full focus:top-12 focus:w-40 shadow-lg p-2 pl-3 pr-8 content-none md:outline-none w-8 md:focus:w-60 md:static transition-all duration-200 " type="text" onblur="this.value=''" maxlength="30"/>
        <i class="fas pointer-events-none fa-search relative right-9 md:right-8 md:-z-10"></i>
 
       <div id="cart-button-and-count-container" class="flex">
@@ -56,7 +57,7 @@
 
 
     
-    <section id="product-container" class="place-items-center grid grid-cols-1 px-10 md:px-20 py-32 gap-5 md:grid-cols-4 md:grid-rows-2">
+    <section id="product-container" class="place-items-center h-fit grid grid-cols-1 px-10 md:px-20 py-32 gap-5 md:grid-cols-4 md:grid-rows-2">
      
   
     </section>
