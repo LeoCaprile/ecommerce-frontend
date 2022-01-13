@@ -3,7 +3,7 @@ const counterContainer = document.getElementById('cart-button-and-count-containe
 export const renderCounter = () => {
 	const cart = JSON.parse(localStorage.getItem('cart'));
 
-	const count = cart.reduce((acc, el) => (acc += el.amount), 0);
+	const count = cart ? cart.reduce((acc, el) => (acc += el.amount), 0) : 0;
 
 	if (count) {
 		if (count < 1) {
