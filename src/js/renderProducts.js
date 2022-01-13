@@ -29,7 +29,7 @@ export const productNotFoundMsg = `<div class="text-center w-50 h-20 col-span-4 
 <h1 class="text-3xl">No hemos podido encontrar el producto que buscabas</h1>
 </div>`;
 
-function handleCartButton(product, data) {
+export function handleCartButton(product, data) {
 	product.firstElementChild.addEventListener('click', (e) => {
 		if (e.target.id == 'cart-button') {
 			const cart = JSON.parse(localStorage.getItem('cart'));
@@ -65,7 +65,6 @@ export const renderProducts = async (name, category, price) => {
 			const product = document.createElement('div');
 			product.innerHTML = productTemplate(productData);
 			handleCartButton(product, productData);
-
 			productContainer.append(product.firstElementChild);
 		});
 	} else {

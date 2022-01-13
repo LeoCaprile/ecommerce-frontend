@@ -1,7 +1,8 @@
 import { renderProducts } from './renderProducts';
 
-const allProducts = document.getElementById('all-products');
-
-allProducts.addEventListener('click', () => {
-	renderProducts();
+const allProducts = document.querySelectorAll('.all-products');
+Array.from(allProducts).forEach((el) => {
+	el.addEventListener('click', () => {
+		renderProducts();
+	});
 });
