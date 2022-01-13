@@ -15,7 +15,7 @@ cartButton.addEventListener('click', () => {
 const templateCartItem = ({ url_image, name, id, price, amount }) => `<card id="${id}" class="flex items-center gap-3"> 
 <img class="w-12" src="${url_image}">
 <p class="text-xs md:text-base">${name}</p>
-<span class="font-medium text-xs md:text-base ml-auto">X ${amount}</span>
+<span class="font-medium text-center w-20 text-xs md:text-base ml-auto">X ${amount}</span>
 <span class="font-medium text-xs md:text-base">$${amount * price}</span>
 <i id="product-delete" class="fas fa-trash-alt cursor-pointer"></i>
 </card>`;

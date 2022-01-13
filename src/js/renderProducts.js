@@ -25,7 +25,7 @@ export const productTemplate = ({ name, id, category, discount, price, url_image
 export const loader =
 	'<div class="absolute left-1/2 top-1/4 place-self-center rounded-full border-8 border-l-transparent border-blue-500 w-20 h-20 transition-all animate-spin duration-200 ease-linear"></div>';
 
-export const productNotFoundMsg = `<div class="text-center w-50 h-10 md:h-20 md:col-span-4 md:row-end-3 "><i class="mb-5 fas fa-search fa-7x"></i><i class="relative right-20 bottom-8 fas fa-question fa-3x"></i>
+export const productNotFoundMsg = `<div class="text-center w-50 h-auto md:h-20 md:col-span-4 md:row-end-3 "><i class="mb-5 fas fa-search fa-7x"></i><i class="relative right-20 bottom-8 fas fa-question fa-3x"></i>
 <h1 class="text-3xl">No hemos podido encontrar el producto que buscabas</h1>
 </div>`;
 
