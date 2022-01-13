@@ -1,13 +1,11 @@
 import { renderCounter } from './countItemsOnCart';
-import { productNotFoundMsg } from './renderProducts';
 
-//if there's no cart in localstorage create one, otherwise, dont.
 if (!localStorage.getItem('cart')) {
 	localStorage.setItem('cart', JSON.stringify([]));
 }
-
 const cartButton = document.getElementById('cart-button');
 const shopingCart = document.getElementById('shoping-cart');
+//if there's no cart in localstorage create one, otherwise, dont.
 
 //display shoping cart when cart icon is clicked, hide it when clicked again.
 cartButton.addEventListener('click', () => {
