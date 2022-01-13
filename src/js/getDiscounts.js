@@ -1,7 +1,7 @@
 import { getDiscounts } from '../constants';
-import { productTemplate, loader } from './renderProducts';
+import { productTemplate, loader, handleCartButton } from './renderProducts';
 
-const discounts = document.getElementById('discounts');
+const discounts = document.querySelectorAll('.discounts');
 
 const fetchDiscounts = async () => {
 	const productContainer = document.getElementById('product-container');
@@ -17,6 +17,7 @@ const fetchDiscounts = async () => {
 		discountProducts.forEach((data) => {
 			const product = document.createElement('div');
 			product.innerHTML = productTemplate(data);
+			handleCartButton(product, data);
 			productContainer.append(product.firstElementChild);
 		});
 	} else {
@@ -24,6 +25,8 @@ const fetchDiscounts = async () => {
 	}
 };
 
-discounts.addEventListener('click', () => {
-	fetchDiscounts();
+Array.from(discounts).forEach((el) => {
+	el.addEventListener('click', () => {
+		fetchDiscounts();
+	});
 });
