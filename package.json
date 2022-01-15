@@ -2,7 +2,7 @@
   "name": "ecommerce-frontend",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --open --port 5050",
+    "dev": "vite  --open",
     "build": "vite build",
     "preview": "vite preview"
   },
