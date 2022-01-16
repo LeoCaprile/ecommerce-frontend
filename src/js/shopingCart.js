@@ -1,5 +1,5 @@
 import { renderCounter } from './countItemsOnCart';
-
+import notFoundImg from '../assets/imagen-no-encontrada.png';
 if (!localStorage.getItem('cart')) {
 	localStorage.setItem('cart', JSON.stringify([]));
 }
@@ -13,7 +13,7 @@ cartButton.addEventListener('click', () => {
 });
 
 const templateCartItem = ({ url_image, name, id, price, amount }) => `<card id="${id}" class="flex items-center gap-3"> 
-<img class="w-12" src="${url_image}">
+<img class="w-12" src="${url_image}" onerror="this.onerror=null; this.src='${notFoundImg}'">
 <p class="text-xs md:text-base">${name}</p>
 <span class="font-medium text-center w-20 text-xs md:text-base ml-auto">X ${amount}</span>
 <span class="font-medium text-xs md:text-base">$${amount * price}</span>
