@@ -12,11 +12,51 @@
 
 Ecommerce web made with vanilla js and Vite bundler, deploy on vercel.
 
-Tecnologies used:
+### Tecnologies used:
 
 - Tailwind css (css framework, like bootstrap)
 - Vite (bundler, similar to webpack)
 - Vanilla js.
+
+### Explanation about the exercise
+
+The excersice consist in making a functional ecommerce frontend and backend.
+This repository is the frontend part of the application, you can check the backend repository <a href="https://github.com/LeoCaprile/ecommerce-backend">**here**</a>.
+
+### Process before coding
+
+- First thing i did it was making a boilerplate with Vite bundler tool.
+- Install the dependencies i will use, in this case tailwind css, post css, autoprefixer. All of these are Dev dependencies.
+- Then i make the folder structure that i will use along this proyect.
+
+- Configure all dependencies, testing that they work on production.
+- All set to start coding.
+
+### Process during coding.
+
+- Start developing app in local enviroment.
+
+- Make a branch on git called "navbar".
+
+- Start making the esqueleton of the navbar in "index.html".
+
+- Added logo, categories dropdown, search bar, cart icon.
+
+- Make a branch on git called "products-container".
+
+- Making the template for the products, and add styles to the product container using grid.
+
+- Add the logic to render products inside container.
+
+- Add rendering products by categories.
+
+- Add render products by discounts.
+
+- Create shopping-cart and its functionalities.
+
+- Make the design responsive.
+
+- Make details fixes.
 <hr>
 
 ## Getting Started <a name = "getting_started"></a>
