@@ -5,7 +5,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Folder Structure](#folder_structure)
-- [Layout](#layout_examples)
+- [Layout](#layout_example)
 - [Javascript](#javascript)
 
 ## About <a name = "about"></a>
